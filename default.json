@@ -1,0 +1,20 @@
+  
+{
+  "extends": [
+    "config:base",
+    ":disablePeerDependencies",
+    ":semanticCommitTypeAll(chore)",
+    ":automergeMinor"
+  ],
+  "packageRules": [
+    {
+      "extends": ["schedule:weekly"],
+      "updateTypes": ["patch", "minor"],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    }
+  ],
+  "rangeStrategy": "bump",
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "semanticCommits": true
+}
