@@ -3,11 +3,11 @@
     "config:base",
     ":disablePeerDependencies",
     ":semanticCommitTypeAll(chore)",
-    ":automergeMinor"
+    ":automergeMinor",
+    "schedule:monthly"
   ],
   "packageRules": [
     {
-      "extends": ["schedule:monthly"],
       "updateTypes": ["patch", "minor"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
